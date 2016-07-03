@@ -3,6 +3,10 @@ var open = require("open");
 var app = express();
 var port = process.env.PORT || 3000;
 
+app.get('/',function(req,res){
+	res.send("Goto /api/whoami route");
+});
+
 app.get('/api/whoami',function(req,res) {
 	var headers = req.headers;
 	var ip = req.ip.split(':').pop();
